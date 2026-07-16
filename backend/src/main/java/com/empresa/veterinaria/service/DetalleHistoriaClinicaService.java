@@ -15,6 +15,9 @@ public class DetalleHistoriaClinicaService {
 
     public List<DetalleHistoriaClinica> obtenerTodos() { return repository.findAll(); }
     public Optional<DetalleHistoriaClinica> obtenerPorId(Integer id) { return repository.findById(id); }
-    public DetalleHistoriaClinica guardar(DetalleHistoriaClinica detalle) { return repository.save(detalle); }
+    public DetalleHistoriaClinica guardar(DetalleHistoriaClinica detalle) {
+        DetalleHistoriaClinica guardado = repository.save(detalle);
+        return repository.findById(guardado.getId()).orElse(guardado);
+    }
     public void eliminar(Integer id) { repository.deleteById(id); }
 }

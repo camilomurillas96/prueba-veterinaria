@@ -15,6 +15,9 @@ public class HistoriaClinicaService {
 
     public List<HistoriaClinica> obtenerTodas() { return repository.findAll(); }
     public Optional<HistoriaClinica> obtenerPorId(Integer id) { return repository.findById(id); }
-    public HistoriaClinica guardar(HistoriaClinica historia) { return repository.save(historia); }
+    public HistoriaClinica guardar(HistoriaClinica historia) {
+        HistoriaClinica guardado = repository.save(historia);
+        return repository.findById(guardado.getId()).orElse(guardado);
+    }
     public void eliminar(Integer id) { repository.deleteById(id); }
 }
