@@ -31,7 +31,7 @@ Esto iniciará un contenedor con PostgreSQL configurado según las credenciales 
 
 # Documentación de la API (Endpoints)
 
-### La URL base para todos los servicios es: http://localhost:8081/api
+### La URL base para todos los servicios es: http://localhost:8080/api
 
 ## 1. Usuarios
 Gestión de propietarios de las mascotas.
