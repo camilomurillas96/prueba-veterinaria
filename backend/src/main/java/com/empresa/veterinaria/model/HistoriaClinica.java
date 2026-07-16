@@ -1,5 +1,6 @@
 package com.empresa.veterinaria.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class HistoriaClinica {
     @Column(name = "fecha_creacion")
     private Integer fechaCreacion;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "historiaClinica", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<DetalleHistoriaClinica> detalles;
 
