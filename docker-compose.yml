@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:13-alpine
+    container_name: veterinaria-db
+    environment:
+      POSTGRES_DB: veterinaria
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - veterinaria-net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: veterinaria-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/veterinaria
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=password123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    networks:
+      - veterinaria-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: veterinaria-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - veterinaria-net
+
+volumes:
+  postgres_data:
+
+networks:
+  veterinaria-net:
+    driver: bridge
