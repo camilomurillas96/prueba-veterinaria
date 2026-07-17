@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h3>Listado de Usuarios</h3>
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Tipo Doc</th>
+        <th>Documento</th>
+        <th>Estado</th>
+        <th>Sexo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{ u.id }}</td>
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.apellido }}</td>
+        <td>{{ u.tipoDocumento }}</td>
+        <td>{{ u.documentoIdentificacion }}</td>
+        <td><span class="badge bg-info text-dark">{{ u.estado }}</span></td>
+        <!-- Mostramos M/F en lugar del número 1/2 -->
+        <td>{{ u.sexo === 1 ? 'Masculino' : 'Femenino' }}</td>
+        <td>  
+            <button [routerLink]="['/editar-usuario', u.id]" class="btn btn-sm btn-primary">Editar</button>  
+            <button (click)="eliminar(u.id)" class="btn btn-sm btn-danger ml-2">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
