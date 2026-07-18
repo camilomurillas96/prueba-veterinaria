@@ -1,1 +1,153 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #005f73;
+  --primary-dark: #003440;
+  --secondary-color: #e9f5f8;
+  --accent-color: #ff7f50;
+  --text-color: #333333;
+  --background-color: #f4f7f6;
+  --white: #ffffff;
+  --light-gray: #e0e0e0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* --- Navigation Bar --- */
+.navbar.navbar-light.bg-light {
+  background-color: var(--white) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  color: var(--primary-dark) !important;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.router-link-active::after {
+  width: 60%;
+}
+
+.navbar-nav .nav-link.router-link-active {
+    color: var(--primary-color) !important;
+}
+
+
+/* --- Main Content Area --- */
+.container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--white) !important;
+  font-weight: 600;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-danger {
+  background-color: #dc3545 !important;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+  background-color: #c82333 !important;
+}
+
+/* --- Tables --- */
+.table {
+  background-color: var(--white);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures the border radius is applied to the table corners */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.table thead {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: var(--secondary-color);
+}
+
+.table-hover tbody tr:hover {
+  background-color: #d8eaf0; /* A slightly darker shade for hover */
+}
+
+
+/* --- Forms --- */
+.form-group label {
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.form-control {
+  border-radius: 4px;
+  border: 1px solid var(--light-gray);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 95, 115, 0.25);
+}
+
+/* --- Page Headers --- */
+h2, h3, h4 {
+  color: var(--primary-dark);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}

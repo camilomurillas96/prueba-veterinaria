@@ -1,0 +1,35 @@
+@import '~@angular/material/theming';
+
+
+@include mat-core();
+
+
+$veterinaria-primary: mat-palette($mat-deep-purple, 700, 500, 900);
+$veterinaria-accent: mat-palette($mat-amber, A200, A100, A400);
+
+
+$veterinaria-warn: mat-palette($mat-red);
+
+
+$veterinaria-theme: mat-light-theme((
+  color: (
+    primary: $veterinaria-primary,
+    accent: $veterinaria-accent,
+    warn: $veterinaria-warn,
+  )
+));
+
+
+@include angular-material-theme($veterinaria-theme);
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: mat-color(mat-palette($mat-grey, 50));
+}
