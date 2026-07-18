@@ -11,7 +11,7 @@ import { Mascota } from 'src/app/models/mascota.model';
       <tr *ngFor="let m of mascotas">
         <td>{{m.id}}</td><td>{{m.nombre}}</td><td>{{m.raza}}</td><td>{{m.usuario.nombre}} ({{m.usuario.id}})</td>
         <td>
-          <button [routerLink]="['/editar-mascota', m.id]" class="btn btn-sm btn-primary">Editar</button>
+          <button [routerLink]="['/mascotas/editar', m.id]" class="btn btn-sm btn-primary">Editar</button>
           <button (click)="eliminar(m.id)" class="btn btn-sm btn-danger ms-2">Eliminar</button>
         </td>
       </tr>

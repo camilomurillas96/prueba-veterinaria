@@ -11,6 +11,6 @@ export class MascotaService {
   listar(): Observable<Mascota[]> { return this.http.get<Mascota[]>(this.apiUrl); }
   obtenerPorId(id: number): Observable<Mascota> { return this.http.get<Mascota>(`${this.apiUrl}/${id}`); }
   crear(mascota: Mascota): Observable<Mascota> { return this.http.post<Mascota>(this.apiUrl, mascota); }
-  actualizar(mascota: Mascota): Observable<Mascota> { return this.http.put<Mascota>(this.apiUrl, mascota); }
+  actualizar(mascota: Mascota): Observable<Mascota> { return this.http.put<Mascota>(`${this.apiUrl}/${mascota.id}`, mascota); }
   eliminar(id: number): Observable<void> { return this.http.delete<void>(`${this.apiUrl}/${id}`); }
 }

@@ -10,6 +10,6 @@ export class ColaboradorService {
   listar(): Observable<Colaborador[]> { return this.http.get<Colaborador[]>(this.apiUrl); }
   obtenerPorId(id: number): Observable<Colaborador> { return this.http.get<Colaborador>(`${this.apiUrl}/${id}`); }
   crear(colaborador: Colaborador): Observable<Colaborador> { return this.http.post<Colaborador>(this.apiUrl, colaborador); }
-  actualizar(colaborador: Colaborador): Observable<Colaborador> { return this.http.put<Colaborador>(this.apiUrl, colaborador); }
+  actualizar(colaborador: Colaborador): Observable<Colaborador> { return this.http.put<Colaborador>(`${this.apiUrl}/${colaborador.id}`, colaborador); }
   eliminar(id: number): Observable<void> { return this.http.delete<void>(`${this.apiUrl}/${id}`); }
 }
