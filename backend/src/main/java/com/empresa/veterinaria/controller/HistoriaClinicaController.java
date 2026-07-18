@@ -25,4 +25,10 @@ public class HistoriaClinicaController {
     public ResponseEntity<HistoriaClinica> crear(@RequestBody HistoriaClinica historia) {
         return new ResponseEntity<>(service.guardar(historia), HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
+        service.eliminar(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
