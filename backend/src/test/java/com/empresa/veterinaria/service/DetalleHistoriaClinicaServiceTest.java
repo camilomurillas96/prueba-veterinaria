@@ -38,7 +38,7 @@ public class DetalleHistoriaClinicaServiceTest {
 
     @Test
     void guardar_DebeRetornarDetalle() {
-        // Simulamos el comportamiento del fix: primero guarda y luego consulta
+
         when(repository.save(any(DetalleHistoriaClinica.class))).thenReturn(detalle);
         when(repository.findById(1)).thenReturn(Optional.of(detalle));
 
@@ -46,7 +46,6 @@ public class DetalleHistoriaClinicaServiceTest {
 
         assertNotNull(resultado);
         assertEquals("38.5", resultado.getTemperatura());
-        // Verifica que se llamó tanto al save como al findById
         verify(repository, times(1)).save(detalle);
         verify(repository, times(1)).findById(1);
     }

@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'editar-usuario/:id', component: UsuarioFormComponent },
 
   { path: 'mascotas', component: MascotaListComponent },
-  { path: 'mascotas/nuevo', component: MascotaFormComponent },
+  { path: 'nueva-mascota', component: MascotaFormComponent },
   { path: 'mascotas/editar/:id', component: MascotaFormComponent },
 
   { path: 'colaboradores', component: ColaboradorListComponent },

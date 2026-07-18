@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Mascota } from '../models/mascota.model';
+import { API_BASE_URL } from 'src/app/api.config';
 
 @Injectable({ providedIn: 'root' })
 export class MascotaService {
-  private apiUrl = 'http://localhost:8080/api/mascotas';
+  private apiUrl = `${API_BASE_URL}/mascotas`;
   constructor(private http: HttpClient) { }
   listar(): Observable<Mascota[]> { return this.http.get<Mascota[]>(this.apiUrl); }
   obtenerPorId(id: number): Observable<Mascota> { return this.http.get<Mascota>(`${this.apiUrl}/${id}`); }

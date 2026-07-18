@@ -35,8 +35,6 @@ public class HistoriaClinicaServiceTest {
     @Test
     void guardar_DebeRetornarHistoria() {
         when(repository.save(any(HistoriaClinica.class))).thenReturn(historia);
-        // Si aplicaste el fix de "hidratación" en este servicio, descomenta la siguiente línea:
-        // when(repository.findById(1)).thenReturn(Optional.of(historia));
 
         HistoriaClinica resultado = service.guardar(historia);
         assertNotNull(resultado);

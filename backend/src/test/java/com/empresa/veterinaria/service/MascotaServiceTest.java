@@ -37,8 +37,6 @@ public class MascotaServiceTest {
     @Test
     void guardar_DebeRetornarMascota() {
         when(repository.save(any(Mascota.class))).thenReturn(mascota);
-        // Si aplicaste el fix de "hidratación" en este servicio, descomenta la siguiente línea:
-        // when(repository.findById(1)).thenReturn(Optional.of(mascota));
 
         Mascota resultado = service.guardar(mascota);
 

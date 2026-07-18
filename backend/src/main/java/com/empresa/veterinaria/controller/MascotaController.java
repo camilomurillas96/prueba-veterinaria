@@ -27,4 +27,10 @@ public class MascotaController {
         Mascota nuevaMascota = mascotaService.guardar(mascota);
         return new ResponseEntity<>(nuevaMascota, HttpStatus.CREATED);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
+        mascotaService.eliminar(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

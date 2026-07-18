@@ -8,7 +8,7 @@ import { UsuarioFormComponent } from './components/usuarios/usuario-form/usuario
 import { MascotaListComponent } from './components/mascotas/mascota-list/mascota-list.component';
 import { MascotaFormComponent } from './components/mascotas/mascota-form/mascota-form.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ColaboradorListComponent } from './components/colaboradores/colaborador-list/colaborador-list.component';
 import { ColaboradorFormComponent } from './components/colaboradores/colaborador-form/colaborador-form.component';
 import { HistoriaListComponent } from './components/historias/historia-list/historia-list.component';
@@ -34,7 +34,8 @@ import { DetalleFormComponent } from './components/detalles/detalle-form/detalle
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
