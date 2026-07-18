@@ -5,6 +5,15 @@ import { UsuarioFormComponent } from './components/usuarios/usuario-form/usuario
 import { MascotaListComponent } from './components/mascotas/mascota-list/mascota-list.component';
 import { MascotaFormComponent } from './components/mascotas/mascota-form/mascota-form.component';
 
+import { ColaboradorListComponent } from './components/colaboradores/colaborador-list/colaborador-list.component';
+import { ColaboradorFormComponent } from './components/colaboradores/colaborador-form/colaborador-form.component';
+
+import { HistoriaListComponent } from './components/historias/historia-list/historia-list.component';
+import { HistoriaFormComponent } from './components/historias/historia-form/historia-form.component';
+
+import { DetalleListComponent } from './components/detalles/detalle-list/detalle-list.component';
+import { DetalleFormComponent } from './components/detalles/detalle-form/detalle-form.component';
+
 const routes: Routes = [
   { path: 'usuarios', component: UsuarioListComponent },
   { path: 'nuevo-usuario', component: UsuarioFormComponent },
@@ -12,7 +21,19 @@ const routes: Routes = [
 
   { path: 'mascotas', component: MascotaListComponent },
   { path: 'mascotas/nuevo', component: MascotaFormComponent },
-  { path: 'mascotas/editar/:id', component: MascotaFormComponent }
+  { path: 'mascotas/editar/:id', component: MascotaFormComponent },
+
+  { path: 'colaboradores', component: ColaboradorListComponent },
+  { path: 'nuevo-colaborador', component: ColaboradorFormComponent },
+  { path: 'editar-colaborador/:id', component: ColaboradorFormComponent },
+
+  { path: 'historias', component: HistoriaListComponent },
+  { path: 'nueva-historia', component: HistoriaFormComponent },
+
+  { path: 'detalles', component: DetalleListComponent },
+  { path: 'nuevo-detalle', component: DetalleFormComponent },
+  
+  { path: '', redirectTo: '/usuarios', pathMatch: 'full' }
 ];
 
 @NgModule({

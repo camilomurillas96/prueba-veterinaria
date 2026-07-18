@@ -9,6 +9,12 @@ import { MascotaListComponent } from './components/mascotas/mascota-list/mascota
 import { MascotaFormComponent } from './components/mascotas/mascota-form/mascota-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ColaboradorListComponent } from './components/colaboradores/colaborador-list/colaborador-list.component';
+import { ColaboradorFormComponent } from './components/colaboradores/colaborador-form/colaborador-form.component';
+import { HistoriaListComponent } from './components/historias/historia-list/historia-list.component';
+import { HistoriaFormComponent } from './components/historias/historia-form/historia-form.component';
+import { DetalleListComponent } from './components/detalles/detalle-list/detalle-list.component';
+import { DetalleFormComponent } from './components/detalles/detalle-form/detalle-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { FormsModule } from '@angular/forms';
     UsuarioListComponent,
     UsuarioFormComponent,
     MascotaListComponent,
-    MascotaFormComponent
+    MascotaFormComponent,
+    ColaboradorListComponent,
+    ColaboradorFormComponent,
+    HistoriaListComponent,
+    HistoriaFormComponent,
+    DetalleListComponent,
+    DetalleFormComponent
   ],
   imports: [
     BrowserModule,
